@@ -11,11 +11,37 @@ function showVisor(addnum) {
   display.innerText = data;  
 }
 
-function saveNumber(numero) {
+function saveNumber1(numero) {
   numero1 = numero;
-  data = "0";
-  display.innerText = data;  
+  data = "";
+  display.innerText = "0";  
 }
+
+function saveNumber2(numero) {
+  numero2 = numero;
+  data = "";
+  display.innerText = "0";  
+}
+
+function resolver(numero1, numero2, operador) {
+  switch(operador){
+    case "suma": //sumar
+    return numero1 + numero2;
+    break;
+
+    case "resta": //restar
+    return numero1 - numero2;
+    break;
+
+    case "multiplica": //multiplicar
+    return numero1 * numero2;
+    break;
+
+    case "divide": //dividir
+    return numero1 / numero2;
+    break;
+  };  
+};
 
 const num1 = document.getElementById("1");
 num1.addEventListener("click",() => {
@@ -29,10 +55,15 @@ num2.addEventListener("click",() => {
 
 const borrar = document.getElementById("c");
 borrar.addEventListener("click",() => {
-  data = "0";
+  data = "";
   numero1 = 0;
   numero2 = 0;
-  display.innerText = data;
+  display.innerText = "0";
+});
+
+const equal = document.getElementById("=");
+equal.addEventListener("click",() => {
+  resolver(numero1, numero2, operador);
 });
 
 
