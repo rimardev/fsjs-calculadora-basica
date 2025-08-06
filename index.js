@@ -10,38 +10,39 @@ function muestraDisplay(addnum) {
   display.innerText = dataDisplay;  
 };
 
-
-
 function validarPrimero(operacion) {
   if(operador == "") {
     numero1 = Number(dataDisplay);
     operador = operacion;
     dataDisplay = "";
     display.innerText = "0";
-  };
-  
+  };  
 };
 
 function resolver(numero1, numero2, operador) {
   switch(operador){
-    case "suma": //sumar
+    case "suma":
     return numero1 + numero2;
     break;
 
-    case "resta": //restar
+    case "resta":
     return numero1 - numero2;
     break;
 
-    case "multiplica": //multiplicar
+    case "multiplica":
     return numero1 * numero2;
     break;
 
-    case "divide": //dividir
+    case "divide":
+    if(numero2 == 0){
+      display.style.fontSize = '45px';
+      display.style.textAlign = 'center';
+      return "Divicion Invalida";      
+    };
     return numero1 / numero2;
     break;
   };
 };
-
 
 
 // OPERADORES *******************************
@@ -51,16 +52,15 @@ borrar.addEventListener("click",() => {
   numero1 = 0;
   numero2 = 0;
   operador = "";
+  display.style.fontSize = '60px';
+  display.style.textAlign = 'right';
   display.innerText = "0";
 });
 
 const equal = document.getElementById("=");
 equal.addEventListener("click",() => {
-  console.log(numero1, numero2, operador, dataDisplay);
   if(operador != "") {
     numero2 = Number(dataDisplay);
-    console.log(numero1, numero2, operador, dataDisplay);
-    console.log(resolver(numero1, numero2, operador));
     display.innerText = resolver(numero1, numero2, operador);
   };  
 });
@@ -84,7 +84,6 @@ const divide = document.getElementById("/");
 divide.addEventListener("click",() => {
   validarPrimero("divide");
 });
-
 
 
 // NUMEROS **********************************
