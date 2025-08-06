@@ -7,21 +7,20 @@ const display = document.getElementById('display');
 
 function muestraDisplay(addnum) {
   dataDisplay += addnum;
-  console.log(dataDisplay);
   display.innerText = dataDisplay;  
-}
+};
 
-function saveNumber1(numero) {
-  numero1 = numero;
-  dataDisplay = "";
-  display.innerText = "0";  
-}
 
-function saveNumber2(numero) {
-  numero2 = numero;
-  dataDisplay = "";
-  display.innerText = "0";  
-}
+
+function validarPrimero(operacion) {
+  if(operador == "") {
+    numero1 = Number(dataDisplay);
+    operador = operacion;
+    dataDisplay = "";
+    display.innerText = "0";
+  };
+  
+};
 
 function resolver(numero1, numero2, operador) {
   switch(operador){
@@ -40,7 +39,7 @@ function resolver(numero1, numero2, operador) {
     case "divide": //dividir
     return numero1 / numero2;
     break;
-  };  
+  };
 };
 
 
@@ -51,13 +50,42 @@ borrar.addEventListener("click",() => {
   dataDisplay = "";
   numero1 = 0;
   numero2 = 0;
+  operador = "";
   display.innerText = "0";
 });
 
 const equal = document.getElementById("=");
 equal.addEventListener("click",() => {
-  resolver(numero1, numero2, operador);
+  console.log(numero1, numero2, operador, dataDisplay);
+  if(operador != "") {
+    numero2 = Number(dataDisplay);
+    console.log(numero1, numero2, operador, dataDisplay);
+    console.log(resolver(numero1, numero2, operador));
+    display.innerText = resolver(numero1, numero2, operador);
+  };  
 });
+
+const suma = document.getElementById("+");
+suma.addEventListener("click",() => {
+  validarPrimero("suma");
+});
+
+const resta = document.getElementById("-");
+resta.addEventListener("click",() => {
+  validarPrimero("resta");
+});
+
+const multiplica = document.getElementById("*");
+multiplica.addEventListener("click",() => {
+  validarPrimero("multiplica");
+});
+
+const divide = document.getElementById("/");
+divide.addEventListener("click",() => {
+  validarPrimero("divide");
+});
+
+
 
 // NUMEROS **********************************
 const num1 = document.getElementById("1");
