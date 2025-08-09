@@ -7,7 +7,7 @@ Una calculadora simple construida con HTML, CSS y JavaScript que permite realiza
 
 ## Características
 
-- Interfaz limpia y responsive
+- Interfaz limpia y simple
 - Operaciones básicas: suma, resta, multiplicación y división
 - Botón para limpiar el display (C)
 - Validación de división por cero
