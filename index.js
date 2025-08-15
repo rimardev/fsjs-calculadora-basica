@@ -87,7 +87,17 @@ divide.addEventListener("click",() => {
 
 
 // NUMEROS **********************************
-const num1 = document.getElementById("1");
+
+const numeros = document.querySelectorAll(".num");
+numeros.forEach(numero => {
+  numero.addEventListener("click", () => {
+    muestraDisplay(numero.textContent);
+  });
+});
+
+
+//Metodo carretero **************************
+/*const num1 = document.getElementById("1");
 num1.addEventListener("click",() => {
   muestraDisplay(num1.textContent);
 });
@@ -138,3 +148,4 @@ num0.addEventListener("click",() => {
     muestraDisplay(num0.textContent);
   };  
 });
+*/
