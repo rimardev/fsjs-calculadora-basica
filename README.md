@@ -1,9 +1,9 @@
-
 # Calculadora Básica en JavaScript
-
-![Calculadora Preview](./preview.png) <!-- Si tienes una imagen de preview, puedes incluirla -->
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
 
 Una calculadora simple construida con HTML, CSS y JavaScript que permite realizar operaciones aritméticas básicas.
+
+![Calculadora Preview](./preview.png) <!-- Si tienes una imagen de preview, puedes incluirla -->
 
 ## Características
 
